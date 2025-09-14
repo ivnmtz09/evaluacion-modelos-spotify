@@ -1,3 +1,5 @@
+import { CheckCircle, Settings, RotateCcw } from 'lucide-react'
+
 export default function McCallPage() {
   return (
     <div className="space-y-12">
@@ -5,143 +7,76 @@ export default function McCallPage() {
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold text-spotify-black">Modelo McCall</h1>
         <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
-          El modelo McCall evalúa la calidad en tres capacidades: <strong>Operación</strong>,
-          <strong> Transición</strong> y <strong>Revisión</strong>, a través de factores como corrección, confiabilidad,
-          usabilidad, seguridad, portabilidad, reusabilidad, interoperabilidad, mantenimiento, flexibilidad y facilidad
-          de prueba.
+          El modelo McCall evalúa la calidad del software a través de tres capacidades principales: 
+          <strong> Operación</strong>, <strong>Transición</strong> y <strong>Revisión</strong>, 
+          midiendo factores como corrección, confiabilidad, usabilidad, integridad, portabilidad, 
+          reusabilidad, interoperabilidad, mantenibilidad, flexibilidad y facilidad de prueba.
         </p>
       </div>
 
-      {/* Software a Evaluar */}
+      {/* Cuestionario - Métrica de Compleción de Funciones */}
       <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Software a Evaluar</h2>
-        <div className="overflow-x-auto">
-          <table className="spotify-table">
-            <thead>
-              <tr>
-                <th>Nombre del Software</th>
-                <th>Repositorio</th>
-                <th>Descripción</th>
-                <th>Licencia de Uso</th>
-                <th>Área de Aplicación</th>
-                <th>Link de Acceso</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="font-medium">Spotify</td>
-                <td>Propietario</td>
-                <td>Plataforma de streaming musical</td>
-                <td>Freemium/Premium</td>
-                <td>Entretenimiento Digital</td>
-                <td>https://spotify.com</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="flex items-center gap-3 mb-6">
+          <CheckCircle className="text-spotify-green" size={28} />
+          <h2 className="text-2xl font-bold text-spotify-black">Cuestionario: Métrica de Compleción de Funciones</h2>
         </div>
-      </section>
-
-      {/* Escala de Valoraciones */}
-      <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Escala de Valoraciones</h2>
         <div className="overflow-x-auto">
           <table className="spotify-table">
             <thead>
               <tr>
-                <th>Descripción</th>
-                <th>Cuantificación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="font-medium">Excelente</td>
-                <td className="text-center font-bold text-spotify-green">4</td>
-              </tr>
-              <tr>
-                <td className="font-medium">Bueno</td>
-                <td className="text-center font-bold">3</td>
-              </tr>
-              <tr>
-                <td className="font-medium">Regular</td>
-                <td className="text-center font-bold">2</td>
-              </tr>
-              <tr>
-                <td className="font-medium">Malo</td>
-                <td className="text-center font-bold">1</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Cuestionario */}
-      <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Cuestionario - Compleción de Funciones</h2>
-        <div className="overflow-x-auto">
-          <table className="spotify-table">
-            <thead>
-              <tr>
-                <th>Métrica</th>
-                <th>Descripción</th>
+                <th>Función</th>
                 <th>Pregunta</th>
-                <th>Puntaje Esperado</th>
-                <th>Puntaje Obtenido (Web)</th>
-                <th>Puntaje Obtenido (Móvil)</th>
+                <th>Esperado</th>
+                <th>Web</th>
+                <th>Móvil</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td className="font-medium">Operaciones básicas</td>
-                <td>Reproducir, pausar, saltar</td>
-                <td>¿Spotify ejecuta operaciones básicas de reproducción sin fallos?</td>
+                <td>¿El sistema permite ejecutar las operaciones básicas de reproducción sin fallos?</td>
                 <td className="text-center font-semibold">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
                 <td className="font-medium">Playlists</td>
-                <td>Crear, editar, eliminar</td>
-                <td>¿Se gestionan las playlists correctamente?</td>
+                <td>¿Spotify gestiona adecuadamente las playlists del usuario?</td>
                 <td className="text-center font-semibold">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
                 <td className="font-medium">Búsqueda</td>
-                <td>Localizar contenidos</td>
-                <td>¿Los resultados de búsqueda son adecuados?</td>
+                <td>¿La búsqueda devuelve resultados relevantes y rápidos?</td>
                 <td className="text-center font-semibold">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
                 <td className="font-medium">Recomendaciones</td>
-                <td>Algoritmos de Discover/Radio</td>
-                <td>¿Las recomendaciones son relevantes?</td>
+                <td>¿El sistema genera recomendaciones útiles?</td>
                 <td className="text-center font-semibold">4</td>
                 <td className="text-center font-semibold text-spotify-green">3</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
                 <td className="font-medium">Gestión de cuenta</td>
-                <td>Registro, login, suscripción</td>
-                <td>¿Las funciones de cuenta funcionan bien?</td>
+                <td>¿Las funciones de gestión de cuenta funcionan correctamente?</td>
                 <td className="text-center font-semibold">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
                 <td className="font-medium">Reproducción offline</td>
-                <td>Descargas y uso sin red</td>
-                <td>¿Se soporta la reproducción offline?</td>
+                <td>¿La app permite la reproducción offline estable?</td>
                 <td className="text-center font-semibold">4</td>
-                <td className="text-center font-semibold text-spotify-green">1</td>
+                <td className="text-center font-semibold text-red-600">1</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
                 <td className="font-medium">Integración externa</td>
-                <td>Chromecast, AirPlay, Bluetooth</td>
-                <td>¿Funciona la integración con otros dispositivos?</td>
+                <td>¿Spotify se integra con dispositivos externos?</td>
                 <td className="text-center font-semibold">4</td>
                 <td className="text-center font-semibold text-spotify-green">3</td>
                 <td className="text-center font-semibold text-spotify-green">4</td>
@@ -151,86 +86,78 @@ export default function McCallPage() {
         </div>
       </section>
 
-      {/* Relación entre Factores y Métricas */}
+      {/* Relación entre Factores de Calidad y Métricas */}
       <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Relación entre Factores de Calidad y Métricas</h2>
+        <div className="flex items-center gap-3 mb-6">
+          <Settings className="text-spotify-green" size={28} />
+          <h2 className="text-2xl font-bold text-spotify-black">Relación entre Factores de Calidad y Métricas</h2>
+        </div>
         <div className="overflow-x-auto">
           <table className="spotify-table">
             <thead>
               <tr>
                 <th>Métrica</th>
-                <th>Operación (Corrección, Confiabilidad, Usabilidad, Integridad)</th>
-                <th>Transición (Portabilidad, Reusabilidad, Interoperabilidad)</th>
-                <th>Revisión (Mantenibilidad, Flexibilidad, Prueba)</th>
+                <th>Factor de Calidad</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="font-medium">Compleción de funciones</td>
-                <td className="text-center text-spotify-green font-semibold">Corrección</td>
-                <td className="text-center text-spotify-gray">-</td>
-                <td className="text-center text-spotify-gray">-</td>
+                <td className="font-medium">Operaciones básicas</td>
+                <td className="text-spotify-green font-semibold">Corrección</td>
               </tr>
               <tr>
-                <td className="font-medium">Complejidad / Integración externa</td>
-                <td className="text-center text-spotify-green font-semibold">Usabilidad</td>
-                <td className="text-center text-spotify-green font-semibold">Interoperabilidad</td>
-                <td className="text-center text-spotify-gray">-</td>
+                <td className="font-medium">Playlists</td>
+                <td className="text-spotify-green font-semibold">Confiabilidad, Usabilidad</td>
               </tr>
               <tr>
-                <td className="font-medium">Reproducción offline</td>
-                <td className="text-center text-spotify-green font-semibold">Integridad</td>
-                <td className="text-center text-spotify-green font-semibold">Portabilidad</td>
-                <td className="text-center text-spotify-gray">-</td>
-              </tr>
-              <tr>
-                <td className="font-medium">Gestión de cuenta</td>
-                <td className="text-center text-spotify-green font-semibold">Confiabilidad</td>
-                <td className="text-center text-spotify-gray">-</td>
-                <td className="text-center text-spotify-gray">-</td>
+                <td className="font-medium">Búsqueda</td>
+                <td className="text-spotify-green font-semibold">Usabilidad</td>
               </tr>
               <tr>
                 <td className="font-medium">Recomendaciones</td>
-                <td className="text-center text-spotify-green font-semibold">Usabilidad</td>
-                <td className="text-center text-spotify-gray">-</td>
-                <td className="text-center text-spotify-gray">-</td>
+                <td className="text-spotify-green font-semibold">Usabilidad</td>
+              </tr>
+              <tr>
+                <td className="font-medium">Gestión de cuenta</td>
+                <td className="text-spotify-green font-semibold">Confiabilidad, Integridad</td>
+              </tr>
+              <tr>
+                <td className="font-medium">Reproducción offline</td>
+                <td className="text-spotify-green font-semibold">Integridad, Portabilidad</td>
+              </tr>
+              <tr>
+                <td className="font-medium">Integración externa</td>
+                <td className="text-spotify-green font-semibold">Usabilidad, Interoperabilidad</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      {/* Resultados */}
+      {/* Resultados de la Evaluación */}
       <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Resultados de la Evaluación</h2>
+        <div className="flex items-center gap-3 mb-6">
+          <RotateCcw className="text-spotify-green" size={28} />
+          <h2 className="text-2xl font-bold text-spotify-black">Resultados de la Evaluación</h2>
+        </div>
         <div className="overflow-x-auto">
           <table className="spotify-table">
             <thead>
               <tr>
                 <th>Capacidad</th>
-                <th>Puntaje Global</th>
                 <th>Factor</th>
-                <th>Puntaje Factor</th>
-                <th>Puntaje Obtenido (Web)</th>
-                <th>Puntaje Obtenido (Móvil)</th>
-                <th>Puntaje Capacidad</th>
+                <th>Puntaje Máximo</th>
+                <th>Web</th>
+                <th>Móvil</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td rowSpan="4" className="font-semibold bg-spotify-gray-light">
-                  Operación (40)
-                </td>
-                <td rowSpan="4" className="text-center font-semibold">
-                  40
-                </td>
+                <td rowSpan="4" className="font-semibold bg-spotify-gray-light">Operación (40 pts)</td>
                 <td className="font-medium">Corrección</td>
                 <td className="text-center">10</td>
                 <td className="text-center font-semibold text-spotify-green">9</td>
                 <td className="text-center font-semibold text-spotify-green">10</td>
-                <td rowSpan="4" className="text-center font-bold text-spotify-green text-lg">
-                  Web: 36 / Móvil: 40
-                </td>
               </tr>
               <tr>
                 <td className="font-medium">Confiabilidad</td>
@@ -251,19 +178,11 @@ export default function McCallPage() {
                 <td className="text-center font-semibold text-spotify-green">10</td>
               </tr>
               <tr>
-                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">
-                  Transición (30)
-                </td>
-                <td rowSpan="3" className="text-center font-semibold">
-                  30
-                </td>
+                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">Transición (30 pts)</td>
                 <td className="font-medium">Portabilidad</td>
                 <td className="text-center">10</td>
                 <td className="text-center font-semibold text-spotify-green">8</td>
                 <td className="text-center font-semibold text-spotify-green">10</td>
-                <td rowSpan="3" className="text-center font-bold text-spotify-green text-lg">
-                  Web: 23 / Móvil: 30
-                </td>
               </tr>
               <tr>
                 <td className="font-medium">Reusabilidad</td>
@@ -278,19 +197,11 @@ export default function McCallPage() {
                 <td className="text-center font-semibold text-spotify-green">10</td>
               </tr>
               <tr>
-                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">
-                  Revisión (30)
-                </td>
-                <td rowSpan="3" className="text-center font-semibold">
-                  30
-                </td>
+                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">Revisión (30 pts)</td>
                 <td className="font-medium">Mantenibilidad</td>
                 <td className="text-center">10</td>
                 <td className="text-center font-semibold text-spotify-green">8</td>
                 <td className="text-center font-semibold text-spotify-green">9</td>
-                <td rowSpan="3" className="text-center font-bold text-spotify-green text-lg">
-                  Web: 24 / Móvil: 27
-                </td>
               </tr>
               <tr>
                 <td className="font-medium">Flexibilidad</td>
@@ -299,7 +210,7 @@ export default function McCallPage() {
                 <td className="text-center font-semibold text-spotify-green">9</td>
               </tr>
               <tr>
-                <td className="font-medium">Facilidad de Prueba</td>
+                <td className="font-medium">Facilidad de prueba</td>
                 <td className="text-center">10</td>
                 <td className="text-center font-semibold text-spotify-green">8</td>
                 <td className="text-center font-semibold text-spotify-green">9</td>
@@ -307,10 +218,10 @@ export default function McCallPage() {
             </tbody>
             <tfoot className="bg-spotify-green text-white font-bold">
               <tr>
-                <td colSpan="6" className="text-right text-lg">
-                  Puntaje Total
-                </td>
-                <td className="text-center text-xl">Web: 82/100 | Móvil: 97/100</td>
+                <td colSpan="2" className="text-right text-lg">Total (100 pts)</td>
+                <td className="text-center">100</td>
+                <td className="text-center text-xl">82</td>
+                <td className="text-center text-xl">97</td>
               </tr>
             </tfoot>
           </table>
@@ -320,13 +231,22 @@ export default function McCallPage() {
       {/* Conclusión */}
       <section className="bg-spotify-black text-white rounded-lg p-8 text-center">
         <h3 className="text-2xl font-bold text-spotify-green mb-4">Resultado Final McCall</h3>
-        <p className="text-xl mb-2">
-          Spotify Web obtuvo <span className="text-spotify-green font-bold">8.2/10</span>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-spotify-gray-dark rounded-lg p-6">
+            <h4 className="text-xl font-semibold mb-2">Spotify Web</h4>
+            <p className="text-3xl font-bold text-spotify-green">82/100</p>
+            <p className="text-spotify-gray mt-2">Puntuación sólida con oportunidades de mejora</p>
+          </div>
+          <div className="bg-spotify-gray-dark rounded-lg p-6">
+            <h4 className="text-xl font-semibold mb-2">Spotify Móvil</h4>
+            <p className="text-3xl font-bold text-spotify-green">97/100</p>
+            <p className="text-spotify-gray mt-2">Excelente desempeño en todas las capacidades</p>
+          </div>
+        </div>
+        <p className="text-spotify-gray mt-6">
+          La versión móvil destaca especialmente en operación y transición, mientras que la web 
+          requiere mejoras principalmente en reproducción offline y reusabilidad.
         </p>
-        <p className="text-xl mb-2">
-          Spotify Móvil obtuvo <span className="text-spotify-green font-bold">9.7/10</span>
-        </p>
-        <p className="text-spotify-gray">La versión móvil destaca especialmente en todas las capacidades evaluadas</p>
       </section>
     </div>
   )

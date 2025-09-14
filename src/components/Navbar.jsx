@@ -11,7 +11,6 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path
 
   const navLinks = [
-    { path: "/", label: "Home" },
     { path: "/equipo", label: "Equipo" },
     { path: "/mccall", label: "McCall" },
     { path: "/boehm", label: "Boehm" },

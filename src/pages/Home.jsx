@@ -5,16 +5,14 @@ export default function Home() {
   return (
     <div className="space-y-16">
       <div className="text-center space-y-8 py-12">
-        <div className="flex justify-center mb-6">
-          <div className="bg-spotify-green/10 p-6 rounded-full">
-            <Music className="w-16 h-16 text-spotify-green" />
-          </div>
-        </div>
         <h1 className="text-5xl md:text-7xl font-black text-spotify-black leading-tight">
           Evaluación de Modelos
           <span className="block text-spotify-green">de Calidad</span>
         </h1>
-        <h2 className="text-3xl md:text-4xl font-bold text-spotify-green-darker">Aplicado a Spotify</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-spotify-green-darker">Aplicado a </h2>
+        <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" className="flex justify-center mb-6">
+          <img src="spotify-banner.jpg" alt="Spotify Banner" className="rounded-2xl shadow-lg w-full max-w-2xl h-auto" />
+        </a >
         <p className="text-xl text-spotify-gray-dark max-w-5xl mx-auto leading-relaxed px-4">
           En este proyecto se aplicaron los modelos de calidad de software{" "}
           <strong className="text-spotify-green">McCall, Boehm y FURPS</strong>
@@ -91,13 +89,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-spotify-black to-spotify-black-light text-white rounded-2xl p-8 md:p-12 mx-4 md:mx-0 shadow-2xl">
+      <section className="bg-spotify-black text-white rounded-2xl p-8 md:p-12 mx-4 md:mx-0 shadow-2xl">
         <div className="text-center space-y-6">
           <div className="flex items-center justify-center mb-6">
             <Users className="w-10 h-10 text-spotify-green mr-4" />
             <h3 className="text-3xl font-black text-spotify-green">¿Por qué evaluar Spotify?</h3>
           </div>
-          <p className="text-spotify-gray leading-relaxed max-w-4xl mx-auto text-lg">
+          <p className="text-spotify-white leading-relaxed max-w-4xl mx-auto text-lg">
             Spotify es una de las plataformas de streaming musical más populares del mundo, con millones de usuarios
             activos. Evaluar su calidad de software nos permite entender cómo los diferentes modelos de calidad pueden
             aplicarse a sistemas complejos y de gran escala.
@@ -108,21 +106,21 @@ export default function Home() {
                 <Users className="w-8 h-8 text-spotify-green" />
               </div>
               <h4 className="font-bold text-lg mb-2">Millones de Usuarios</h4>
-              <p className="text-spotify-gray text-sm">Plataforma global con alta demanda</p>
+              <p className="text-spotify-green text-sm">Plataforma global con alta demanda</p>
             </div>
             <div className="text-center">
               <div className="bg-spotify-green/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="w-8 h-8 text-spotify-green" />
               </div>
               <h4 className="font-bold text-lg mb-2">Sistema Complejo</h4>
-              <p className="text-spotify-gray text-sm">Arquitectura robusta y escalable</p>
+              <p className="text-spotify-green text-sm">Arquitectura robusta y escalable</p>
             </div>
             <div className="text-center">
               <div className="bg-spotify-green/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-spotify-green" />
               </div>
               <h4 className="font-bold text-lg mb-2">Calidad Premium</h4>
-              <p className="text-spotify-gray text-sm">Estándares de excelencia en software</p>
+              <p className="text-spotify-green text-sm">Estándares de excelencia en software</p>
             </div>
           </div>
         </div>

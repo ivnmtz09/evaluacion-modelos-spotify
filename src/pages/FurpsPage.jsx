@@ -1,3 +1,5 @@
+import { Layers, TrendingUp } from 'lucide-react'
+
 export default function FurpsPage() {
   return (
     <div className="space-y-12">
@@ -5,243 +7,193 @@ export default function FurpsPage() {
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold text-spotify-black">Modelo FURPS</h1>
         <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
-          El modelo FURPS evalúa la calidad en 5 factores principales: <strong>Funcionalidad</strong>,
-          <strong> Usabilidad</strong>, <strong>Fiabilidad</strong>, <strong>Rendimiento</strong> y{" "}
-          <strong>Soporte</strong>.
+          El modelo FURPS evalúa la calidad del software a través de cinco factores principales: 
+          <strong> Funcionalidad</strong>, <strong>Usabilidad</strong>, <strong>Fiabilidad</strong>, 
+          <strong> Rendimiento</strong> y <strong>Soportabilidad</strong>, proporcionando una 
+          evaluación integral de la calidad del producto.
         </p>
       </div>
 
-      {/* Estructura del Modelo */}
+      {/* Evaluación por características */}
       <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Estructura del Modelo FURPS</h2>
+        <div className="flex items-center gap-3 mb-6">
+          <Layers className="text-spotify-green" size={28} />
+          <h2 className="text-2xl font-bold text-spotify-black">Evaluación por Características</h2>
+        </div>
         <div className="overflow-x-auto">
           <table className="spotify-table">
             <thead>
               <tr>
                 <th>Característica</th>
-                <th>Puntaje</th>
-                <th>Factor</th>
-                <th>Puntaje</th>
+                <th>Factor Evaluado</th>
+                <th>Esperado</th>
+                <th>Web</th>
+                <th>Móvil</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">
-                  F - Funcionalidad
-                </td>
-                <td rowSpan="3" className="text-center font-semibold">
-                  30
-                </td>
-                <td>Características y capacidades del programa</td>
-                <td className="text-center">10</td>
+                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">Funcionalidad</td>
+                <td className="font-medium">Cobertura de funciones</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Generalidad de las funciones</td>
-                <td className="text-center">10</td>
+                <td className="font-medium">Seguridad / Integridad</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Seguridad del Sistema</td>
-                <td className="text-center">10</td>
+                <td className="font-medium">Interoperabilidad</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td rowSpan="4" className="font-semibold bg-spotify-gray-light">
-                  U - Usabilidad
-                </td>
-                <td rowSpan="4" className="text-center font-semibold">
-                  20
-                </td>
-                <td>Capacidad de Prueba</td>
-                <td className="text-center">5</td>
+                <td rowSpan="2" className="font-semibold bg-spotify-gray-light">Usabilidad</td>
+                <td className="font-medium">Facilidad de uso</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Capacidad de configuración</td>
-                <td className="text-center">5</td>
+                <td className="font-medium">Documentación / Ayuda</td>
+                <td className="text-center font-semibold">3</td>
+                <td className="text-center font-semibold text-spotify-green">2</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
               </tr>
               <tr>
-                <td>Compatibilidad</td>
-                <td className="text-center">5</td>
+                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">Fiabilidad</td>
+                <td className="font-medium">Tolerancia a fallos</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Requisitos de instalación</td>
-                <td className="text-center">5</td>
+                <td className="font-medium">Recuperación de errores</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">
-                  R - Confiabilidad
-                </td>
-                <td rowSpan="3" className="text-center font-semibold">
-                  15
-                </td>
-                <td>Frecuencia y severidad de fallos</td>
-                <td className="text-center">5</td>
+                <td className="font-medium">Consistencia</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Exactitud de las salidas</td>
-                <td className="text-center">5</td>
+                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">Rendimiento</td>
+                <td className="font-medium">Tiempo de respuesta</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Capacidad de predicción</td>
-                <td className="text-center">5</td>
+                <td className="font-medium">Consumo de recursos</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
               </tr>
               <tr>
-                <td rowSpan="4" className="font-semibold bg-spotify-gray-light">
-                  P - Rendimiento
-                </td>
-                <td rowSpan="4" className="text-center font-semibold">
-                  20
-                </td>
-                <td>Factores Humanos</td>
-                <td className="text-center">5</td>
+                <td className="font-medium">Estabilidad</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Factores Estéticos</td>
-                <td className="text-center">5</td>
+                <td rowSpan="3" className="font-semibold bg-spotify-gray-light">Soportabilidad</td>
+                <td className="font-medium">Facilidad de instalación</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Consistencia de la interfaz</td>
-                <td className="text-center">5</td>
+                <td className="font-medium">Portabilidad</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
               <tr>
-                <td>Documentación</td>
-                <td className="text-center">5</td>
-              </tr>
-              <tr>
-                <td rowSpan="5" className="font-semibold bg-spotify-gray-light">
-                  S - Soporte
-                </td>
-                <td rowSpan="5" className="text-center font-semibold">
-                  15
-                </td>
-                <td>Velocidad de procesamiento</td>
-                <td className="text-center">3</td>
-              </tr>
-              <tr>
-                <td>Tiempo de respuesta</td>
-                <td className="text-center">3</td>
-              </tr>
-              <tr>
-                <td>Consumo de recursos</td>
-                <td className="text-center">3</td>
-              </tr>
-              <tr>
-                <td>Rendimiento efectivo total</td>
-                <td className="text-center">3</td>
-              </tr>
-              <tr>
-                <td>Eficacia</td>
-                <td className="text-center">3</td>
+                <td className="font-medium">Facilidad de mantenimiento</td>
+                <td className="text-center font-semibold">4</td>
+                <td className="text-center font-semibold text-spotify-green">3</td>
+                <td className="text-center font-semibold text-spotify-green">4</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      {/* Evaluación */}
+      {/* Resultados de la valoración */}
       <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Evaluación por Factores</h2>
-        <div className="overflow-x-auto">
-          <table className="spotify-table">
-            <thead>
-              <tr>
-                <th>Característica</th>
-                <th>Factor</th>
-                <th>Valoración (1-4) Web</th>
-                <th>Valoración (1-4) Móvil</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="font-semibold text-spotify-green">Funcionalidad</td>
-                <td>Capacidades, seguridad, adecuación</td>
-                <td className="text-center font-bold text-spotify-green">3</td>
-                <td className="text-center font-bold text-spotify-green">4</td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-spotify-green">Usabilidad</td>
-                <td>Facilidad de uso, consistencia interfaz</td>
-                <td className="text-center font-bold text-spotify-green">3</td>
-                <td className="text-center font-bold text-spotify-green">4</td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-spotify-green">Fiabilidad</td>
-                <td>Disponibilidad, tolerancia a fallos</td>
-                <td className="text-center font-bold text-spotify-green">3</td>
-                <td className="text-center font-bold text-spotify-green">4</td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-spotify-green">Rendimiento</td>
-                <td>Tiempo de respuesta, eficiencia</td>
-                <td className="text-center font-bold text-spotify-green">3</td>
-                <td className="text-center font-bold text-spotify-green">4</td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-spotify-green">Soportabilidad</td>
-                <td>Mantenimiento, flexibilidad, portabilidad</td>
-                <td className="text-center font-bold text-spotify-green">3</td>
-                <td className="text-center font-bold text-spotify-green">4</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="flex items-center gap-3 mb-6">
+          <TrendingUp className="text-spotify-green" size={28} />
+          <h2 className="text-2xl font-bold text-spotify-black">Resultados de la Valoración</h2>
         </div>
-      </section>
-
-      {/* Resultados */}
-      <section className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-spotify-black mb-6">Resultados de la Valoración</h2>
         <div className="overflow-x-auto">
           <table className="spotify-table">
             <thead>
               <tr>
                 <th>Característica</th>
-                <th>Puntaje Esperado</th>
-                <th>Puntaje Obtenido (Web)</th>
-                <th>Puntaje Obtenido (Móvil)</th>
-                <th>Total</th>
+                <th>Puntaje Máximo</th>
+                <th>Web</th>
+                <th>Móvil</th>
+                <th>% Web</th>
+                <th>% Móvil</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="font-semibold">Funcionalidad</td>
-                <td className="text-center">30</td>
-                <td className="text-center font-bold text-spotify-green">27</td>
-                <td className="text-center font-bold text-spotify-green">30</td>
-                <td className="text-center font-bold text-spotify-green">Web: 9.0 / Móvil: 10</td>
+                <td className="font-semibold bg-spotify-gray-light">Funcionalidad</td>
+                <td className="text-center">12</td>
+                <td className="text-center font-semibold text-spotify-green">9</td>
+                <td className="text-center font-semibold text-spotify-green">12</td>
+                <td className="text-center font-bold text-spotify-green">75%</td>
+                <td className="text-center font-bold text-spotify-green">100%</td>
               </tr>
               <tr>
-                <td className="font-semibold">Usabilidad</td>
-                <td className="text-center">20</td>
-                <td className="text-center font-bold text-spotify-green">18</td>
-                <td className="text-center font-bold text-spotify-green">20</td>
-                <td className="text-center font-bold text-spotify-green">Web: 9.0 / Móvil: 10</td>
+                <td className="font-semibold bg-spotify-gray-light">Usabilidad</td>
+                <td className="text-center">7</td>
+                <td className="text-center font-semibold text-spotify-green">5</td>
+                <td className="text-center font-semibold text-spotify-green">7</td>
+                <td className="text-center font-bold text-spotify-green">71%</td>
+                <td className="text-center font-bold text-spotify-green">100%</td>
               </tr>
               <tr>
-                <td className="font-semibold">Fiabilidad</td>
-                <td className="text-center">20</td>
-                <td className="text-center font-bold text-spotify-green">18</td>
-                <td className="text-center font-bold text-spotify-green">20</td>
-                <td className="text-center font-bold text-spotify-green">Web: 9.0 / Móvil: 10</td>
+                <td className="font-semibold bg-spotify-gray-light">Fiabilidad</td>
+                <td className="text-center">12</td>
+                <td className="text-center font-semibold text-spotify-green">10</td>
+                <td className="text-center font-semibold text-spotify-green">12</td>
+                <td className="text-center font-bold text-spotify-green">83%</td>
+                <td className="text-center font-bold text-spotify-green">100%</td>
               </tr>
               <tr>
-                <td className="font-semibold">Rendimiento</td>
-                <td className="text-center">15</td>
-                <td className="text-center font-bold text-spotify-green">14</td>
-                <td className="text-center font-bold text-spotify-green">15</td>
-                <td className="text-center font-bold text-spotify-green">Web: 9.3 / Móvil: 10</td>
+                <td className="font-semibold bg-spotify-gray-light">Rendimiento</td>
+                <td className="text-center">12</td>
+                <td className="text-center font-semibold text-spotify-green">10</td>
+                <td className="text-center font-semibold text-spotify-green">11</td>
+                <td className="text-center font-bold text-spotify-green">83%</td>
+                <td className="text-center font-bold text-spotify-green">92%</td>
               </tr>
               <tr>
-                <td className="font-semibold">Soportabilidad</td>
-                <td className="text-center">15</td>
-                <td className="text-center font-bold text-spotify-green">14</td>
-                <td className="text-center font-bold text-spotify-green">15</td>
-                <td className="text-center font-bold text-spotify-green">Web: 9.3 / Móvil: 10</td>
+                <td className="font-semibold bg-spotify-gray-light">Soportabilidad</td>
+                <td className="text-center">12</td>
+                <td className="text-center font-semibold text-spotify-green">9</td>
+                <td className="text-center font-semibold text-spotify-green">12</td>
+                <td className="text-center font-bold text-spotify-green">75%</td>
+                <td className="text-center font-bold text-spotify-green">100%</td>
               </tr>
             </tbody>
             <tfoot className="bg-spotify-green text-white font-bold">
               <tr>
-                <td colSpan="4" className="text-right text-lg">
-                  Puntuación Total FURPS
-                </td>
-                <td className="text-center text-xl">Web: 9.17/10 | Móvil: 10/10</td>
+                <td className="text-right text-lg">Total FURPS</td>
+                <td className="text-center">55</td>
+                <td className="text-center text-xl">43</td>
+                <td className="text-center text-xl">54</td>
+                <td className="text-center text-2xl">78%</td>
+                <td className="text-center text-2xl">98%</td>
               </tr>
             </tfoot>
           </table>
@@ -251,13 +203,24 @@ export default function FurpsPage() {
       {/* Conclusión */}
       <section className="bg-spotify-black text-white rounded-lg p-8 text-center">
         <h3 className="text-2xl font-bold text-spotify-green mb-4">Resultado Final FURPS</h3>
-        <p className="text-xl mb-4">
-          Spotify Móvil obtuvo una puntuación perfecta de <span className="text-spotify-green font-bold">10/10</span>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-spotify-gray-dark rounded-lg p-6">
+            <h4 className="text-xl font-semibold mb-2">Spotify Web</h4>
+            <p className="text-3xl font-bold text-spotify-green">78%</p>
+            <p className="text-lg text-spotify-green">43/55 puntos</p>
+            <p className="text-spotify-gray mt-2">Buen desempeño con áreas de mejora</p>
+          </div>
+          <div className="bg-spotify-gray-dark rounded-lg p-6">
+            <h4 className="text-xl font-semibold mb-2">Spotify Móvil</h4>
+            <p className="text-3xl font-bold text-spotify-green">98%</p>
+            <p className="text-lg text-spotify-green">54/55 puntos</p>
+            <p className="text-spotify-gray mt-2">Excelencia casi perfecta en todos los factores</p>
+          </div>
+        </div>
+        <p className="text-spotify-gray mt-6">
+          Ambas versiones destacan especialmente en funcionalidad y fiabilidad, 
+          mientras que la versión web requiere mejoras principalmente en usabilidad y documentación.
         </p>
-        <p className="text-xl mb-2">
-          Mientras que Spotify Web alcanzó <span className="text-spotify-green font-bold">9.17/10</span>
-        </p>
-        <p className="text-spotify-gray">Ambas versiones destacan especialmente en funcionalidad y usabilidad</p>
       </section>
     </div>
   )
