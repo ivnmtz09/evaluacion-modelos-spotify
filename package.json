@@ -2,7 +2,7 @@
   "name": "evaluacion-modelos-spotify",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ivnmtz09.github.io/evaluacion-modelos-spotify",
+  "homepage": "https://ivnmtz09.github.io/evaluacion-modelos-spotify/",
   "type": "module",
   "scripts": {
     "dev": "vite",
