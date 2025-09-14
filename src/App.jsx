@@ -10,7 +10,7 @@ import Conclusions from "./pages/Conclusions"
 
 function App() {
   return (
-    <Router basename="/evaluacion-modelos-spotify">
+    <Router>
       <div className="min-h-screen flex flex-col bg-spotify-gray-light">
         <Navbar />
         <main className="flex-1 container mx-auto px-4 py-8">
