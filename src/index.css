@@ -1,3 +1,193 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f6f6f6 0%, #e8e8e8 100%);
+  color: #191414;
+  line-height: 1.6;
+}
+
+/* Enhanced Spotify-inspired table styling with correct color classes */
+.spotify-table {
+  @apply min-w-full border-0 text-sm bg-white rounded-xl overflow-hidden shadow-lg;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.spotify-table thead {
+  background: #1db954;
+}
+
+.spotify-table th {
+  @apply px-6 py-4 font-bold text-left text-sm uppercase tracking-wider text-white;
+  border: none;
+  background: linear-gradient(135deg, #1db954 0%, #169c46 100%);
+}
+
+.spotify-table th:first-child {
+  @apply rounded-tl-xl;
+}
+
+.spotify-table th:last-child {
+  @apply rounded-tr-xl;
+}
+
+.spotify-table tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.spotify-table tbody tr:nth-child(odd) {
+  @apply bg-white;
+}
+
+.spotify-table tbody tr:hover {
+  @apply bg-green-50 transform scale-[1.01] transition-all duration-300 shadow-md;
+}
+
+.spotify-table td {
+  @apply px-6 py-4 border-0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.spotify-table tbody tr:last-child td:first-child {
+  @apply rounded-bl-xl;
+}
+
+.spotify-table tbody tr:last-child td:last-child {
+  @apply rounded-br-xl;
+}
+
+.spotify-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Enhanced button styling with correct Spotify colors */
+.spotify-button {
+  @apply px-8 py-4 text-white rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl;
+  background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.spotify-button:hover {
+  background: linear-gradient(135deg, #169c46 0%, #1db954 100%);
+}
+
+.spotify-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.spotify-button:hover::before {
+  left: 100%;
+}
+
+.spotify-button-secondary {
+  @apply px-8 py-4 bg-transparent rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:text-white shadow-md hover:shadow-lg hover:scale-105;
+  border: 2px solid #1db954;
+  color: #1db954;
+}
+
+.spotify-button-secondary:hover {
+  background: #1db954;
+}
+
+/* Added responsive card styling for team members */
+.team-card {
+  @apply bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-100;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Enhanced responsive design for mobile devices */
+@media (max-width: 768px) {
+  .spotify-table {
+    @apply text-xs shadow-md;
+  }
+
+  .spotify-table th,
+  .spotify-table td {
+    @apply px-3 py-3;
+  }
+
+  .spotify-table th {
+    @apply text-xs;
+  }
+
+  .spotify-button,
+  .spotify-button-secondary {
+    @apply px-6 py-3 text-xs;
+  }
+
+  .team-card {
+    @apply p-6;
+  }
+}
+
+@media (max-width: 640px) {
+  .spotify-table {
+    @apply text-xs;
+  }
+
+  .spotify-table th,
+  .spotify-table td {
+    @apply px-2 py-2;
+  }
+
+  .spotify-button,
+  .spotify-button-secondary {
+    @apply px-4 py-2 text-xs;
+  }
+}
+
+/* Added smooth scrolling and enhanced focus states */
+html {
+  scroll-behavior: smooth;
+}
+
+.spotify-button:focus,
+.spotify-button-secondary:focus {
+  @apply outline-none ring-4 ring-opacity-50;
+  ring-color: #1db954;
+}
+
+/* Added loading animation with correct Spotify colors */
+@keyframes pulse-spotify {
+  0%,
+  100% {
+    opacity: 1;
+    background-color: #1db954;
+  }
+  50% {
+    opacity: 0.7;
+    background-color: #1ed760;
+  }
+}
+
+.loading-pulse {
+  animation: pulse-spotify 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
