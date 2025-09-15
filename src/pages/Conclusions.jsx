@@ -112,24 +112,24 @@ export default function Conclusions() {
                 <th>Promedio</th>
               </tr>
             </thead>
-            <tbody>
+<tbody>
               <tr>
                 <td className="font-semibold">McCall</td>
-                <td className="text-center font-bold text-spotify-green">8.2/10</td>
-                <td className="text-center font-bold text-spotify-green">9.7/10</td>
-                <td className="text-center font-bold text-spotify-green">8.95/10</td>
+                <td className="text-center font-bold text-spotify-green">82/100</td>
+                <td className="text-center font-bold text-spotify-green">97/100</td>
+                <td className="text-center font-bold text-spotify-green">89.5/100</td>
               </tr>
               <tr>
                 <td className="font-semibold">Boehm</td>
-                <td className="text-center font-bold text-spotify-green">7.5/10</td>
-                <td className="text-center font-bold text-spotify-green">9.38/10</td>
-                <td className="text-center font-bold text-spotify-green">8.44/10</td>
+                <td className="text-center font-bold text-spotify-green">81 (26/32)</td>
+                <td className="text-center font-bold text-spotify-green">97 (31/32)</td>
+                <td className="text-center font-bold text-spotify-green">89% (57/64)</td>
               </tr>
               <tr>
                 <td className="font-semibold">FURPS</td>
-                <td className="text-center font-bold text-spotify-green">9.17/10</td>
-                <td className="text-center font-bold text-spotify-green">10/10</td>
-                <td className="text-center font-bold text-spotify-green">9.59/10</td>
+                <td className="text-center font-bold text-spotify-green">78 (43/55)</td>
+                <td className="text-center font-bold text-spotify-green">98 (54/55)</td>
+                <td className="text-center font-bold text-spotify-green">88 (97/110)</td>
               </tr>
             </tbody>
           </table>

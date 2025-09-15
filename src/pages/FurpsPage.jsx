@@ -150,40 +150,40 @@ export default function FurpsPage() {
                 <td className="text-center">12</td>
                 <td className="text-center font-semibold text-spotify-green">9</td>
                 <td className="text-center font-semibold text-spotify-green">12</td>
-                <td className="text-center font-bold text-spotify-green">75%</td>
-                <td className="text-center font-bold text-spotify-green">100%</td>
+                <td className="text-center font-bold text-spotify-green">75</td>
+                <td className="text-center font-bold text-spotify-green">100</td>
               </tr>
               <tr>
                 <td className="font-semibold bg-spotify-gray-light">Usabilidad</td>
                 <td className="text-center">7</td>
                 <td className="text-center font-semibold text-spotify-green">5</td>
                 <td className="text-center font-semibold text-spotify-green">7</td>
-                <td className="text-center font-bold text-spotify-green">71%</td>
-                <td className="text-center font-bold text-spotify-green">100%</td>
+                <td className="text-center font-bold text-spotify-green">71</td>
+                <td className="text-center font-bold text-spotify-green">100</td>
               </tr>
               <tr>
                 <td className="font-semibold bg-spotify-gray-light">Fiabilidad</td>
                 <td className="text-center">12</td>
                 <td className="text-center font-semibold text-spotify-green">10</td>
                 <td className="text-center font-semibold text-spotify-green">12</td>
-                <td className="text-center font-bold text-spotify-green">83%</td>
-                <td className="text-center font-bold text-spotify-green">100%</td>
+                <td className="text-center font-bold text-spotify-green">83</td>
+                <td className="text-center font-bold text-spotify-green">100</td>
               </tr>
               <tr>
                 <td className="font-semibold bg-spotify-gray-light">Rendimiento</td>
                 <td className="text-center">12</td>
                 <td className="text-center font-semibold text-spotify-green">10</td>
                 <td className="text-center font-semibold text-spotify-green">11</td>
-                <td className="text-center font-bold text-spotify-green">83%</td>
-                <td className="text-center font-bold text-spotify-green">92%</td>
+                <td className="text-center font-bold text-spotify-green">83</td>
+                <td className="text-center font-bold text-spotify-green">92</td>
               </tr>
               <tr>
                 <td className="font-semibold bg-spotify-gray-light">Soportabilidad</td>
                 <td className="text-center">12</td>
                 <td className="text-center font-semibold text-spotify-green">9</td>
                 <td className="text-center font-semibold text-spotify-green">12</td>
-                <td className="text-center font-bold text-spotify-green">75%</td>
-                <td className="text-center font-bold text-spotify-green">100%</td>
+                <td className="text-center font-bold text-spotify-green">75</td>
+                <td className="text-center font-bold text-spotify-green">100</td>
               </tr>
             </tbody>
             <tfoot className="bg-spotify-green text-white font-bold">
@@ -192,8 +192,8 @@ export default function FurpsPage() {
                 <td className="text-center">55</td>
                 <td className="text-center text-xl">43</td>
                 <td className="text-center text-xl">54</td>
-                <td className="text-center text-2xl">78%</td>
-                <td className="text-center text-2xl">98%</td>
+                <td className="text-center text-2xl">78</td>
+                <td className="text-center text-2xl">98</td>
               </tr>
             </tfoot>
           </table>
@@ -206,13 +206,13 @@ export default function FurpsPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-spotify-gray-dark rounded-lg p-6">
             <h4 className="text-xl font-semibold mb-2">Spotify Web</h4>
-            <p className="text-3xl font-bold text-spotify-green">78%</p>
+            <p className="text-3xl font-bold text-spotify-green">78</p>
             <p className="text-lg text-spotify-green">43/55 puntos</p>
             <p className="text-spotify-gray mt-2">Buen desempeño con áreas de mejora</p>
           </div>
           <div className="bg-spotify-gray-dark rounded-lg p-6">
             <h4 className="text-xl font-semibold mb-2">Spotify Móvil</h4>
-            <p className="text-3xl font-bold text-spotify-green">98%</p>
+            <p className="text-3xl font-bold text-spotify-green">98</p>
             <p className="text-lg text-spotify-green">54/55 puntos</p>
             <p className="text-spotify-gray mt-2">Excelencia casi perfecta en todos los factores</p>
           </div>

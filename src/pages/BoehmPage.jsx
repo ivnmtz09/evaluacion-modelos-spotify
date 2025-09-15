@@ -178,24 +178,24 @@ export default function BoehmPage() {
                 <td className="text-center">16</td>
                 <td className="text-center font-semibold text-spotify-green">13</td>
                 <td className="text-center font-semibold text-spotify-green">15</td>
-                <td className="text-center font-bold text-spotify-green">81.25%</td>
-                <td className="text-center font-bold text-spotify-green">93.75%</td>
+                <td className="text-center font-bold text-spotify-green">81.25</td>
+                <td className="text-center font-bold text-spotify-green">93.75</td>
               </tr>
               <tr>
                 <td className="font-semibold bg-spotify-gray-light">Mantenibilidad</td>
                 <td className="text-center">8</td>
                 <td className="text-center font-semibold text-spotify-green">6</td>
                 <td className="text-center font-semibold text-spotify-green">8</td>
-                <td className="text-center font-bold text-spotify-green">75.00%</td>
-                <td className="text-center font-bold text-spotify-green">100.00%</td>
+                <td className="text-center font-bold text-spotify-green">75.00</td>
+                <td className="text-center font-bold text-spotify-green">100.00</td>
               </tr>
               <tr>
                 <td className="font-semibold bg-spotify-gray-light">Flexibilidad</td>
                 <td className="text-center">8</td>
                 <td className="text-center font-semibold text-spotify-green">7</td>
                 <td className="text-center font-semibold text-spotify-green">8</td>
-                <td className="text-center font-bold text-spotify-green">87.50%</td>
-                <td className="text-center font-bold text-spotify-green">100.00%</td>
+                <td className="text-center font-bold text-spotify-green">87.50</td>
+                <td className="text-center font-bold text-spotify-green">100.00</td>
               </tr>
             </tbody>
             <tfoot className="bg-spotify-green text-white font-bold">
@@ -204,8 +204,8 @@ export default function BoehmPage() {
                 <td className="text-center">32</td>
                 <td className="text-center text-xl">26</td>
                 <td className="text-center text-xl">31</td>
-                <td className="text-center text-2xl">81%</td>
-                <td className="text-center text-2xl">97%</td>
+                <td className="text-center text-2xl">81</td>
+                <td className="text-center text-2xl">97</td>
               </tr>
             </tfoot>
           </table>
@@ -218,13 +218,13 @@ export default function BoehmPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-spotify-gray-dark rounded-lg p-6">
             <h4 className="text-xl font-semibold mb-2">Spotify Web</h4>
-            <p className="text-3xl font-bold text-spotify-green">81%</p>
+            <p className="text-3xl font-bold text-spotify-green">81</p>
             <p className="text-lg text-spotify-green">26/32 puntos</p>
             <p className="text-spotify-gray mt-2">Buen desempeño con oportunidades de mejora</p>
           </div>
           <div className="bg-spotify-gray-dark rounded-lg p-6">
             <h4 className="text-xl font-semibold mb-2">Spotify Móvil</h4>
-            <p className="text-3xl font-bold text-spotify-green">97%</p>
+            <p className="text-3xl font-bold text-spotify-green">97</p>
             <p className="text-lg text-spotify-green">31/32 puntos</p>
             <p className="text-spotify-gray mt-2">Excelente completitud en todos los niveles</p>
           </div>
