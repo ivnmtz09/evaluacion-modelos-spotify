@@ -123,7 +123,7 @@ export default function Conclusions() {
                 <td className="font-semibold">Boehm</td>
                 <td className="text-center font-bold text-spotify-green">81 (26/32)</td>
                 <td className="text-center font-bold text-spotify-green">97 (31/32)</td>
-                <td className="text-center font-bold text-spotify-green">89% (57/64)</td>
+                <td className="text-center font-bold text-spotify-green">89 (57/64)</td>
               </tr>
               <tr>
                 <td className="font-semibold">FURPS</td>

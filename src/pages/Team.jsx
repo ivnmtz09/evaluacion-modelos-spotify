@@ -7,31 +7,31 @@ export default function Team() {
       name: "Juan Carlos",
       lastName: "Añez Ahumada",
       email: "janiez@uniguajira.edu.co",
-      avatar: "JCA",
+      avatar: "JCAA",
     },
     {
       name: "Jesus Manuel",
       lastName: "Arias Deluque", 
       email: "jmanuelarias@uniguajira.edu.co",
-      avatar: "JA",
+      avatar: "JMAD",
     },
     {
       name: "Ivan Jesus",
       lastName: "Martínez Molina",
       email: "ijesusmartinez@uniguajira.edu.co",
-      avatar: "IM",
+      avatar: "IJMM",
     },
     {
       name: "Sebastián David",
       lastName: "Ramos Jaraba",
       email: "sdramos@uniguajira.edu.co",
-      avatar: "SR",
+      avatar: "SDRJ",
     },
     {
       name: "Stiven David",
       lastName: "Silva Toro",
       email: "sssilva@uniguajira.edu.co",
-      avatar: "SS",
+      avatar: "SDST",
     },
   ]
 
@@ -90,7 +90,7 @@ export default function Team() {
               >
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   {/* Avatar */}
-                  <div className="w-32 h-32 md:w-40 md:h-40 bg-spotify-green text-white rounded-full flex items-center justify-center text-4xl md:text-5xl font-bold shadow-xl">
+                  <div className="w-32 h-32 md:w-40 md:h-40 bg-spotify-green text-white rounded-full flex items-center justify-center text-4xl md:text-5xl font-bold shadow-xl overflow-hidden">
                     {member.avatar}
                   </div>
                   
@@ -145,7 +145,7 @@ export default function Team() {
             className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 team-card"
           >
             <div className="flex items-center gap-6">
-              <div className="w-20 h-20 bg-spotify-green text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-md">
+              <div className="w-20 h-20 bg-spotify-green text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-md overflow-hidden">
                 {member.avatar}
               </div>
               <div className="flex-1">
@@ -155,8 +155,8 @@ export default function Team() {
                 <h4 className="text-lg font-semibold text-spotify-gray-dark mb-3">
                   {member.lastName}
                 </h4>
+                  <div><Mail size={16} className="text-spotify-green" /></div>
                 <div className="flex items-center gap-2">
-                  <Mail size={18} className="text-spotify-green" />
                   <a 
                     href={`mailto:${member.email}`}
                     className="text-spotify-gray-dark hover:text-spotify-green transition-colors duration-300 text-sm md:text-base"

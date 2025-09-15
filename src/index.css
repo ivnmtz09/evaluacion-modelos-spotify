@@ -20,6 +20,26 @@ body {
   line-height: 1.6;
 }
 
+/* Estilos para avatares redondos */
+.avatar-container {
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Aseguramos que las imágenes dentro de los avatares también sean redondas */
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Enhanced Spotify-inspired table styling with correct color classes */
 .spotify-table {
   @apply min-w-full border-0 text-sm bg-white rounded-xl overflow-hidden shadow-lg;
@@ -115,12 +135,20 @@ body {
 
 /* Added responsive card styling for team members */
 .team-card {
-  @apply bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-100;
+  @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .team-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-4px);
+}
+
+/* Estilos específicos para la vista móvil del equipo */
+.team-mobile-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 /* Enhanced responsive design for mobile devices */
@@ -144,7 +172,22 @@ body {
   }
 
   .team-card {
-    @apply p-6;
+    @apply p-4;
+  }
+  
+  /* Ajustes específicos para la vista móvil del equipo */
+  .team-mobile-view .team-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Ocultar carrusel en móvil */
+  .team-carousel {
+    display: none;
+  }
+  
+  /* Mostrar vista móvil */
+  .team-mobile-view {
+    display: flex;
   }
 }
 
@@ -162,6 +205,24 @@ body {
   .spotify-button-secondary {
     @apply px-4 py-2 text-xs;
   }
+  
+  /* Ajustes para avatares en móvil */
+  .avatar-container {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Estilos para desktop - ocultar vista móvil */
+@media (min-width: 769px) {
+  .team-mobile-view {
+    display: none;
+  }
+  
+  .team-carousel {
+    display: block;
+  }
 }
 
 /* Added smooth scrolling and enhanced focus states */
@@ -173,7 +234,6 @@ html {
 .spotify-button-secondary:focus {
   @apply outline-none ring-4 ring-spotify-green ring-opacity-50;
 }
-
 
 /* Added loading animation with correct Spotify colors */
 @keyframes pulse-spotify {
@@ -192,103 +252,74 @@ html {
   animation: pulse-spotify 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Enhanced responsive design for mobile devices */
-@media (max-width: 768px) {
-  .spotify-table {
-    @apply text-xs shadow-md;
-  }
-
-  .spotify-table th,
-  .spotify-table td {
-    @apply px-3 py-3;
-  }
-
-  .spotify-table th {
-    @apply text-xs;
-  }
-
-  .spotify-button,
-  .spotify-button-secondary {
-    @apply px-6 py-3 text-xs;
-  }
-
-  .team-card {
-    @apply p-6;
-  }
-
-  /* Mobile Navigation Styles */
-  .mobile-nav-overlay {
-    @apply fixed inset-0 bg-black bg-opacity-50 z-40;
-  }
-
-  .mobile-nav-menu {
-    @apply fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out;
-  }
-
-  .mobile-nav-menu.closed {
-    transform: translateX(100%);
-  }
-
-  .mobile-nav-menu.open {
-    transform: translateX(0);
-  }
-
-  .mobile-nav-header {
-    @apply bg-spotify-green text-white p-4 flex items-center justify-between;
-  }
-
-  .mobile-nav-items {
-    @apply p-4 space-y-4;
-  }
-
-  .mobile-nav-item {
-    @apply block w-full text-left p-3 rounded-lg text-spotify-black hover:bg-spotify-green hover:text-white transition-all duration-300 font-medium;
-  }
-
-  .mobile-nav-item.active {
-    @apply bg-spotify-green text-white;
-  }
-
-  /* Hide desktop navigation on mobile */
-  .desktop-nav {
-    @apply hidden;
-  }
-
-  /* Show mobile navigation button */
-  .mobile-nav-toggle {
-    @apply block md:hidden;
-  }
+/* Mobile Navigation Styles */
+.mobile-nav-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-40;
 }
 
-@media (max-width: 640px) {
-  .spotify-table {
-    @apply text-xs;
-  }
+.mobile-nav-menu {
+  @apply fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out;
+}
 
-  .spotify-table th,
-  .spotify-table td {
-    @apply px-2 py-2;
-  }
+.mobile-nav-menu.closed {
+  transform: translateX(100%);
+}
 
-  .spotify-button,
-  .spotify-button-secondary {
-    @apply px-4 py-2 text-xs;
-  }
+.mobile-nav-menu.open {
+  transform: translateX(0);
+}
 
-  /* Carousel adjustments for small screens */
-  .carousel-container {
-    @apply mx-2;
-  }
+.mobile-nav-header {
+  @apply bg-spotify-green text-white p-4 flex items-center justify-between;
+}
 
-  .carousel-card {
-    @apply p-4;
-  }
+.mobile-nav-items {
+  @apply p-4 space-y-4;
+}
 
-  .carousel-avatar {
-    @apply w-20 h-20 text-2xl;
-  }
+.mobile-nav-item {
+  @apply block w-full text-left p-3 rounded-lg text-spotify-black hover:bg-spotify-green hover:text-white transition-all duration-300 font-medium;
+}
 
-  .carousel-navigation {
-    @apply left-2 right-2;
-  }
+.mobile-nav-item.active {
+  @apply bg-spotify-green text-white;
+}
+
+/* Hide desktop navigation on mobile */
+.desktop-nav {
+  @apply hidden;
+}
+
+/* Show mobile navigation button */
+.mobile-nav-toggle {
+  @apply block md:hidden;
+}
+
+/* Colores personalizados para Spotify */
+.text-spotify-green {
+  color: #1db954;
+}
+
+.text-spotify-black {
+  color: #191414;
+}
+
+.text-spotify-gray-dark {
+  color: #535353;
+}
+
+.bg-spotify-green {
+  background-color: #1db954;
+}
+
+.bg-spotify-black {
+  background-color: #191414;
+}
+
+.bg-spotify-green-lighter {
+  background-color: #1ed760;
+}
+
+.ring-spotify-green {
+  --ring-color: #1db954;
 }
