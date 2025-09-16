@@ -4,14 +4,20 @@ export default function BoehmPage() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-spotify-black">Modelo Boehm</h1>
-        <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
-          El modelo de Boehm organiza la calidad del software en tres niveles jerárquicos: 
-          <strong> Utilidad</strong>, <strong>Mantenibilidad</strong> y <strong>Flexibilidad</strong>, 
-          evaluando características primitivas que contribuyen al nivel general de calidad.
-        </p>
-      </div>
+        <div className="text-center space-y-6 mb-12">
+          <h1 className="text-4xl font-bold text-spotify-black">Modelo Boehm</h1>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            El modelo de Boehm, propuesto por <strong>Barry Boehm en 1978</strong>, es similar al modelo de McCall 
+            y define la calidad en términos de atributos cualitativos y métricas para realizar las medidas.
+          </p>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            Este modelo organiza la calidad del software en tres niveles jerárquicos: 
+            <strong> Utilidad</strong>, <strong>Mantenibilidad</strong> y <strong>Flexibilidad</strong>, 
+            evaluando características primitivas que contribuyen al nivel general de calidad. 
+            Gracias a esta jerarquía, permite analizar de forma detallada cómo cada característica influye 
+            en la percepción y rendimiento global del sistema.
+          </p>
+        </div>
 
       {/* Cuestionario de características primitivas */}
       <section className="bg-white rounded-lg shadow-lg p-8">

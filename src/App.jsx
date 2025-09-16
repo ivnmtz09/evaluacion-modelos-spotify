@@ -7,6 +7,8 @@ import McCallPage from "./pages/McCallPage"
 import BoehmPage from "./pages/BoehmPage"
 import FurpsPage from "./pages/FurpsPage"
 import Conclusions from "./pages/Conclusions"
+import Referencias from "./pages/Referencias"
+import Visor from "./pages/Visor"
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/boehm" element={<BoehmPage />} />
             <Route path="/furps" element={<FurpsPage />} />
             <Route path="/conclusiones" element={<Conclusions />} />
+            <Route path="/referencias" element={<Referencias />} />
+            <Route path="/visor/:archivo" element={<Visor />} />
           </Routes>
         </main>
         <Footer />

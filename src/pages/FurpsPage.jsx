@@ -4,15 +4,21 @@ export default function FurpsPage() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-spotify-black">Modelo FURPS</h1>
-        <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
-          El modelo FURPS evalúa la calidad del software a través de cinco factores principales: 
-          <strong> Funcionalidad</strong>, <strong>Usabilidad</strong>, <strong>Fiabilidad</strong>, 
-          <strong> Rendimiento</strong> y <strong>Soportabilidad</strong>, proporcionando una 
-          evaluación integral de la calidad del producto.
-        </p>
-      </div>
+        <div className="text-center space-y-6 mb-12">
+          <h1 className="text-4xl font-bold text-spotify-black">Modelo FURPS</h1>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            El modelo FURPS, propuesto por <strong>Robert Grady y Hewlett Packard (HP) en 1987</strong>, 
+            evalúa la calidad del software a través de cinco factores principales: 
+            <strong> Funcionalidad</strong>, <strong>Usabilidad</strong>, <strong>Fiabilidad</strong>, 
+            <strong> Rendimiento</strong> y <strong>Soportabilidad</strong>. 
+          </p>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            Además, este modelo contempla que los requisitos se clasifiquen en dos categorías: 
+            requisitos <strong>funcionales (F)</strong>, que especifican funciones que el sistema debe 
+            realizar, y requisitos <strong>no funcionales (URPS)</strong>, que puntualizan atributos del 
+            sistema o del entorno donde se ejecuta. Esto permite una evaluación integral de la calidad del producto.
+          </p>
+        </div>
 
       {/* Evaluación por características */}
       <section className="bg-white rounded-lg shadow-lg p-8">

@@ -4,15 +4,23 @@ export default function McCallPage() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-spotify-black">Modelo McCall</h1>
-        <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
-          El modelo McCall evalúa la calidad del software a través de tres capacidades principales: 
-          <strong> Operación</strong>, <strong>Transición</strong> y <strong>Revisión</strong>, 
-          midiendo factores como corrección, confiabilidad, usabilidad, integridad, portabilidad, 
-          reusabilidad, interoperabilidad, mantenibilidad, flexibilidad y facilidad de prueba.
-        </p>
-      </div>
+        <div className="text-center space-y-6 mb-12">
+          <h1 className="text-4xl font-bold text-spotify-black">Modelo McCall</h1>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            El modelo McCall evalúa la calidad del software a través de tres capacidades principales: 
+            <strong> Operación</strong>, <strong>Transición</strong> y <strong>Revisión</strong>, 
+            midiendo factores como corrección, confiabilidad, usabilidad, integridad, portabilidad, 
+            reusabilidad, interoperabilidad, mantenibilidad, flexibilidad y facilidad de prueba.
+          </p>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            Este modelo de calidad fue presentado en <strong>1977</strong> y propone una serie de factores de calidad
+            conocidos como factores de McCall, <strong>Richards, & Walters (1977).</strong> La idea del modelo es la descomposición
+            del concepto genérico de calidad en tres capacidades importantes para un producto software, 
+            todo desde la mirada del usuario. A su vez, cada capacidad se descompone en un conjunto de factores 
+            y finalmente se definen criterios para evaluar el factor a través de métricas que indican en qué medida 
+            el sistema posee una característica dada.
+          </p>
+        </div>
 
       {/* Cuestionario - Métrica de Compleción de Funciones */}
       <section className="bg-white rounded-lg shadow-lg p-8">

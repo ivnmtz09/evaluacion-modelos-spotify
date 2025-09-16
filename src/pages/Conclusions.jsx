@@ -67,13 +67,22 @@ export default function Conclusions() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-spotify-black">Conclusiones de la Evaluación</h1>
-        <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
-          Análisis integral de los resultados obtenidos mediante la aplicación de los modelos McCall, Boehm y FURPS
-          sobre las plataformas web y móvil de Spotify.
-        </p>
-      </div>
+        <div className="text-center space-y-6 mb-12">
+          <h1 className="text-4xl font-bold text-spotify-black">Conclusiones de la Evaluación</h1>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            En este apartado se presentan las conclusiones derivadas de la aplicación de los modelos 
+            <strong> McCall</strong>, <strong>Boehm</strong> y <strong>FURPS</strong> sobre las plataformas 
+            web y móvil de <strong>Spotify</strong>. 
+          </p>
+          <p className="text-lg text-spotify-gray-dark max-w-4xl mx-auto leading-relaxed">
+            El análisis integral de las métricas y resultados permitió identificar las fortalezas y 
+            oportunidades de mejora en aspectos como la <strong>usabilidad</strong>, la 
+            <strong>mantenibilidad</strong>, el <strong>rendimiento</strong> y la 
+            <strong>portabilidad</strong>. 
+            Asimismo, se destacan las diferencias entre las versiones web y móvil, validando la efectividad 
+            de usar múltiples modelos de calidad de software para obtener una visión más completa y objetiva.
+          </p>
+        </div>
 
       {/* Resumen Ejecutivo */}
       <section className="bg-spotify-green text-white rounded-lg p-8">
@@ -252,6 +261,11 @@ export default function Conclusions() {
           calidad de software en un caso de estudio real y relevante.
         </p>
       </section>
+      <div className="text-center mt-12">
+        <a href="/#/referencias" className="spotify-button">
+        Ver Referencias Bibliográficas
+        </a>
+      </div>
     </div>
   )
 }
