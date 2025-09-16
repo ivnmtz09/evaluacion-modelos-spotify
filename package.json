@@ -4,15 +4,12 @@
   "version": "0.0.0",
   "homepage": "https://ivnmtz09.github.io/evaluacion-modelos-spotify/",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:pages": "vite build && Copy-Item dist/index.html dist/404.html",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build:pages",
-    "deploy": "gh-pages -d dist"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
