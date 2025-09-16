@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
@@ -12,7 +12,7 @@ import Visor from "./pages/Visor"
 
 function App() {
   return (
-    <Router>
+    <Router basename="/evaluacion-modelos-spotify">
       <div className="min-h-screen flex flex-col bg-spotify-gray-light">
         <Navbar />
         <main className="flex-1 container mx-auto px-4 py-8">
