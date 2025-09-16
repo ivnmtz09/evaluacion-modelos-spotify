@@ -11,6 +11,7 @@ import {
   BookOpen, 
   Heart 
 } from 'lucide-react'
+import { Link } from "react-router-dom"
 
 export default function Conclusions() {
   const conclusions = [
@@ -261,11 +262,11 @@ export default function Conclusions() {
           calidad de software en un caso de estudio real y relevante.
         </p>
       </section>
-      <div className="text-center mt-12">
-        <a href="/#/referencias" className="spotify-button">
-        Ver Referencias Bibliográficas
-        </a>
-      </div>
+        <div className="text-center mt-12">
+          <Link to="/referencias" className="spotify-button">
+            Ver Referencias Bibliográficas
+          </Link>
+        </div>
     </div>
   )
 }
