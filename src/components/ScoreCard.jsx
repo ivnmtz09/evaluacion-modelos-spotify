@@ -5,30 +5,42 @@ export default function ScoreCard({ answers, weight = 10 }) {
   const weighted = (normalized / 10) * weight
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-spotify-green">
-      <h3 className="text-xl font-bold text-spotify-black mb-4">Resultados de la Evaluación</h3>
+    <div className="card-interactive p-6 md:p-8 rounded-3xl border-t-4 border-t-spotify-green text-white">
+      <h3 className="text-xl md:text-2xl font-black text-white mb-6 tracking-tight">
+        Resultados de la Evaluación
+      </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="text-center p-4 bg-spotify-gray-light rounded-lg">
-          <p className="text-sm text-spotify-gray-dark mb-1">Promedio (1-4)</p>
-          <p className="text-2xl font-bold text-spotify-green">{avg.toFixed(2)}</p>
+        <div className="text-center p-5 bg-black/40 rounded-2xl border border-white/10 card-interactive">
+          <p className="text-xs uppercase tracking-wider text-gray-400 font-bold mb-1">
+            Promedio (1 - 4)
+          </p>
+          <p className="text-3xl font-black text-spotify-green-light font-mono">
+            {avg.toFixed(2)}
+          </p>
         </div>
 
-        <div className="text-center p-4 bg-spotify-gray-light rounded-lg">
-          <p className="text-sm text-spotify-gray-dark mb-1">Normalizado (0-10)</p>
-          <p className="text-2xl font-bold text-spotify-green">{normalized.toFixed(2)}</p>
+        <div className="text-center p-5 bg-black/40 rounded-2xl border border-white/10 card-interactive">
+          <p className="text-xs uppercase tracking-wider text-gray-400 font-bold mb-1">
+            Normalizado (0 - 10)
+          </p>
+          <p className="text-3xl font-black text-spotify-green-light font-mono">
+            {normalized.toFixed(2)}
+          </p>
         </div>
 
-        <div className="text-center p-4 bg-spotify-green text-white rounded-lg">
-          <p className="text-sm opacity-90 mb-1">Puntos Factor (peso {weight})</p>
-          <p className="text-2xl font-bold">{weighted.toFixed(2)}</p>
+        <div className="text-center p-5 bg-gradient-to-br from-spotify-green to-emerald-600 text-white rounded-2xl shadow-glow-green-sm card-interactive">
+          <p className="text-xs uppercase tracking-wider text-emerald-100 font-bold mb-1">
+            Puntos Factor (peso {weight})
+          </p>
+          <p className="text-3xl font-black font-mono">{weighted.toFixed(2)}</p>
         </div>
       </div>
 
-      <div className="mt-4 text-center">
-        <p className="text-sm text-spotify-gray-dark">
+      <div className="mt-6 text-center">
+        <span className="inline-block px-3 py-1 bg-white/10 text-gray-300 text-xs font-semibold rounded-full border border-white/10">
           Preguntas respondidas: {valid.length} de {answers.length}
-        </p>
+        </span>
       </div>
     </div>
   )

@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-panel: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-micro: 200ms;
+  --dur-panel: 400ms;
+  --color-spotify-green: #1db954;
+  --color-spotify-dark: #121212;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,12 +24,66 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f6f6f6 0%, #e8e8e8 100%);
-  color: #191414;
+  background-color: #0b0d10;
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(29, 185, 84, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 40%, rgba(29, 185, 84, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(24, 24, 24, 0.8) 0px, transparent 60%);
+  background-attachment: fixed;
+  color: #f3f4f6;
   line-height: 1.6;
 }
 
-/* Estilos para avatares redondos */
+/* Reducción de movimiento respetando la preferencia de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .parallax-layer {
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
+
+/* Stagger Utilities para coreografía de offset y delay (Pilar 3) */
+.stagger-1 { animation-delay: 60ms !important; }
+.stagger-2 { animation-delay: 120ms !important; }
+.stagger-3 { animation-delay: 180ms !important; }
+.stagger-4 { animation-delay: 240ms !important; }
+.stagger-5 { animation-delay: 300ms !important; }
+.stagger-6 { animation-delay: 360ms !important; }
+.stagger-7 { animation-delay: 420ms !important; }
+.stagger-8 { animation-delay: 480ms !important; }
+
+/* Microinteracciones y Tarjetas Interactivas Dark Spotify */
+.card-interactive {
+  background-color: #16181d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f3f4f6;
+  transition: transform 220ms var(--ease-spring),
+              box-shadow 220ms var(--ease-spring),
+              border-color 220ms var(--ease-spring),
+              background-color 220ms var(--ease-spring);
+  will-change: transform, box-shadow;
+}
+
+.card-interactive:hover {
+  transform: translate3d(0, -4px, 0);
+  border-color: rgba(29, 185, 84, 0.45);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px -2px rgba(29, 185, 84, 0.25);
+}
+
+/* Elementos Parallax acelerados por hardware (Pilar 4) */
+.parallax-gpu {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Avatares */
 .avatar-container {
   border-radius: 50%;
   overflow: hidden;
@@ -30,82 +93,95 @@ body {
   background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
   color: white;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(29, 185, 84, 0.35);
+  transition: transform 200ms var(--ease-spring);
 }
 
-/* Aseguramos que las imágenes dentro de los avatares también sean redondas */
-.avatar-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.avatar-container:hover {
+  transform: scale(1.05);
 }
 
-/* Enhanced Spotify-inspired table styling with correct color classes */
+/* Tabla Spotify Dark Mode con alto contraste WCAG AAA */
 .spotify-table {
-  @apply min-w-full border-0 text-sm bg-white rounded-xl overflow-hidden shadow-lg;
+  @apply min-w-full border-0 text-sm bg-[#16181d] rounded-2xl overflow-hidden shadow-2xl;
   border-collapse: separate;
   border-spacing: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .spotify-table thead {
-  background: #1db954;
+  background: #111317;
 }
 
 .spotify-table th {
-  @apply px-6 py-4 font-bold text-left text-sm uppercase tracking-wider text-white;
+  @apply px-6 py-4 font-bold text-left text-xs uppercase tracking-wider text-white;
   border: none;
-  background: linear-gradient(135deg, #1db954 0%, #169c46 100%);
+  background: #111317;
+  border-bottom: 2px solid #1db954;
 }
 
 .spotify-table th:first-child {
-  @apply rounded-tl-xl;
+  @apply rounded-tl-2xl;
 }
 
 .spotify-table th:last-child {
-  @apply rounded-tr-xl;
+  @apply rounded-tr-2xl;
+}
+
+.spotify-table tbody tr {
+  transition: background-color 180ms var(--ease-spring), transform 180ms var(--ease-spring);
 }
 
 .spotify-table tbody tr:nth-child(even) {
-  @apply bg-gray-50;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .spotify-table tbody tr:nth-child(odd) {
-  @apply bg-white;
+  background-color: transparent;
 }
 
 .spotify-table tbody tr:hover {
-  @apply bg-green-50 transform scale-[1.01] transition-all duration-300 shadow-md;
+  background-color: rgba(29, 185, 84, 0.12);
 }
 
 .spotify-table td {
-  @apply px-6 py-4 border-0;
-  border-bottom: 1px solid #f0f0f0;
+  @apply px-6 py-4 border-0 text-gray-200;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .spotify-table tbody tr:last-child td:first-child {
-  @apply rounded-bl-xl;
+  @apply rounded-bl-2xl;
 }
 
 .spotify-table tbody tr:last-child td:last-child {
-  @apply rounded-br-xl;
+  @apply rounded-br-2xl;
 }
 
 .spotify-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* Enhanced button styling with correct Spotify colors */
+/* Botones Spotify con Curva Spring */
 .spotify-button {
-  @apply px-8 py-4 text-white rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl;
+  @apply px-7 py-3.5 text-white rounded-full font-bold text-sm tracking-wide shadow-md flex items-center justify-center gap-2;
   background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
   border: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: transform 200ms var(--ease-spring),
+              box-shadow 200ms var(--ease-spring),
+              background 200ms var(--ease-spring);
 }
 
 .spotify-button:hover {
+  transform: translate3d(0, -2px, 0) scale(1.02);
+  box-shadow: 0 10px 24px -4px rgba(29, 185, 84, 0.5);
   background: linear-gradient(135deg, #169c46 0%, #1db954 100%);
+}
+
+.spotify-button:active {
+  transform: translate3d(0, 0, 0) scale(0.98);
 }
 
 .spotify-button::before {
@@ -115,8 +191,8 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 450ms var(--ease-panel);
 }
 
 .spotify-button:hover::before {
@@ -124,188 +200,82 @@ body {
 }
 
 .spotify-button-secondary {
-  @apply px-8 py-4 bg-transparent rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:text-white shadow-md hover:shadow-lg hover:scale-105;
-  border: 2px solid #1db954;
-  color: #1db954;
+  @apply px-7 py-3.5 bg-white/5 backdrop-blur-sm rounded-full font-bold text-sm tracking-wide text-white border border-white/20 shadow-sm flex items-center justify-center gap-2;
+  transition: transform 200ms var(--ease-spring),
+              box-shadow 200ms var(--ease-spring),
+              background-color 200ms var(--ease-spring),
+              border-color 200ms var(--ease-spring),
+              color 200ms var(--ease-spring);
 }
 
 .spotify-button-secondary:hover {
-  background: #1db954;
+  background: rgba(29, 185, 84, 0.15);
+  border-color: #1db954;
+  color: #1ed760;
+  transform: translate3d(0, -2px, 0) scale(1.02);
+  box-shadow: 0 8px 20px -4px rgba(29, 185, 84, 0.3);
 }
 
-/* Added responsive card styling for team members */
+.spotify-button-secondary:active {
+  transform: translate3d(0, 0, 0) scale(0.98);
+}
+
+/* Tarjetas de equipo */
 .team-card {
-  @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background-color: #16181d;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 220ms var(--ease-spring),
+              box-shadow 220ms var(--ease-spring),
+              border-color 220ms var(--ease-spring);
 }
 
 .team-card:hover {
-  transform: translateY(-4px);
+  transform: translate3d(0, -4px, 0);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5), 0 0 14px -2px rgba(29, 185, 84, 0.25);
+  border-color: rgba(29, 185, 84, 0.4);
 }
 
-/* Estilos específicos para la vista móvil del equipo */
-.team-mobile-view {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem;
+/* Shimmer Skeleton */
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
 }
 
-/* Enhanced responsive design for mobile devices */
-@media (max-width: 768px) {
-  .spotify-table {
-    @apply text-xs shadow-md;
-  }
-
-  .spotify-table th,
-  .spotify-table td {
-    @apply px-3 py-3;
-  }
-
-  .spotify-table th {
-    @apply text-xs;
-  }
-
-  .spotify-button,
-  .spotify-button-secondary {
-    @apply px-6 py-3 text-xs;
-  }
-
-  .team-card {
-    @apply p-4;
-  }
-  
-  /* Ajustes específicos para la vista móvil del equipo */
-  .team-mobile-view .team-card {
-    margin-bottom: 1rem;
-  }
-  
-  /* Ocultar carrusel en móvil */
-  .team-carousel {
-    display: none;
-  }
-  
-  /* Mostrar vista móvil */
-  .team-mobile-view {
-    display: flex;
-  }
+/* Focus accesibles */
+:focus-visible {
+  outline: 2px solid #1db954 !important;
+  outline-offset: 2px !important;
 }
 
-@media (max-width: 640px) {
-  .spotify-table {
-    @apply text-xs;
-  }
-
-  .spotify-table th,
-  .spotify-table td {
-    @apply px-2 py-2;
-  }
-
-  .spotify-button,
-  .spotify-button-secondary {
-    @apply px-4 py-2 text-xs;
-  }
-  
-  /* Ajustes para avatares en móvil */
-  .avatar-container {
-    width: 80px;
-    height: 80px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Estilos para desktop - ocultar vista móvil */
-@media (min-width: 769px) {
-  .team-mobile-view {
-    display: none;
-  }
-  
-  .team-carousel {
-    display: block;
-  }
-}
-
-/* Added smooth scrolling and enhanced focus states */
-html {
-  scroll-behavior: smooth;
-}
-
-.spotify-button:focus,
-.spotify-button-secondary:focus {
-  @apply outline-none ring-4 ring-spotify-green ring-opacity-50;
-}
-
-/* Added loading animation with correct Spotify colors */
-@keyframes pulse-spotify {
-  0%,
-  100% {
-    opacity: 1;
-    background-color: #1db954;
-  }
-  50% {
-    opacity: 0.7;
-    background-color: #1ed760;
-  }
-}
-
-.loading-pulse {
-  animation: pulse-spotify 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Mobile Navigation Styles */
-.mobile-nav-overlay {
-  @apply fixed inset-0 bg-black bg-opacity-50 z-40;
-}
-
-.mobile-nav-menu {
-  @apply fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out;
-}
-
-.mobile-nav-menu.closed {
-  transform: translateX(100%);
-}
-
-.mobile-nav-menu.open {
-  transform: translateX(0);
-}
-
-.mobile-nav-header {
-  @apply bg-spotify-green text-white p-4 flex items-center justify-between;
-}
-
-.mobile-nav-items {
-  @apply p-4 space-y-4;
-}
-
-.mobile-nav-item {
-  @apply block w-full text-left p-3 rounded-lg text-spotify-black hover:bg-spotify-green hover:text-white transition-all duration-300 font-medium;
-}
-
-.mobile-nav-item.active {
-  @apply bg-spotify-green text-white;
-}
-
-/* Hide desktop navigation on mobile */
-.desktop-nav {
-  @apply hidden;
-}
-
-/* Show mobile navigation button */
-.mobile-nav-toggle {
-  @apply block md:hidden;
-}
-
-/* Colores personalizados para Spotify */
+/* Colores semánticos con contraste accesible */
 .text-spotify-green {
   color: #1db954;
 }
 
+.text-spotify-green-light {
+  color: #1ed760;
+}
+
+.text-spotify-green-accessible {
+  /* Excelente contraste sobre fondos oscuros */
+  color: #1ed760;
+}
+
 .text-spotify-black {
-  color: #191414;
+  /* Para elementos oscuros */
+  color: #ffffff;
 }
 
 .text-spotify-gray-dark {
-  color: #535353;
+  color: #9ca3af;
 }
 
 .bg-spotify-green {
@@ -313,13 +283,9 @@ html {
 }
 
 .bg-spotify-black {
-  background-color: #191414;
+  background-color: #111317;
 }
 
 .bg-spotify-green-lighter {
   background-color: #1ed760;
-}
-
-.ring-spotify-green {
-  --ring-color: #1db954;
 }
